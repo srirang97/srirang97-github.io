@@ -1,110 +1,123 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p
- { font-family: 'Raleway', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+body {
+	font-family: 'Indie Flower', cursive !important;
+  background: #FDE3A7; /*CAPE HONEY*/
+	margin: 0px;
+	padding: 0px;
 }
 
-h1{font-size:35px;}
-h2{font-size:30px;}
-h3{font-size:25px;}
-p {font-size:16px;}
-
-body {background:#490A3D;}
-.quotemark {
-    position: relative;
-    top: -12px;
-    padding-right: 10px;
+::selection {
+	background: transparent;
 }
 
-blockquote {
-  border-left: 10px solid #490A3D;
-  margin: 30px 10px;
-  padding: 10px 30px;
-}
-blockquote:before {
-  color: #ccc;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-blockquote h1, h2, h3, p{
-  display: inline;
-}
-blockquote footer {
-	font-size:18px;
-	text-align:right;
-	color:transparent;
+h4 {
+	font-size: 26px;
+	line-height: 1px;
+	font-family: 'Amatic SC', cursive !important;
 }
 
-.container {
-	max-height:800px;
-	margin: 10% auto auto auto;
-}
-.quotebox {
-	background:#fff;
-	max-width:500px;
-	min-height:100px;
-	border:1px solid #222;
-	border-radius:5px;
-	margin:10px;
+.color1{color:#1BBC9B}/*MOUNTAIN MEADOW*/
+.color2{color:#C0392B/*TALL POPPY*/}
+
+
+.card {
+	color: #013243; /*SHERPA BLUE*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 400px;
+	background: #e0e1dc;
+	transform-style: preserve-3d;
+	transform: translate(-50%,-50%) perspective(2000px);
+	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
+	transition: 1s;
 }
 
-.quotebutton {
-	display:inline-block;
-	padding:6px 12px;
+.card:hover {
+	transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
+	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
 }
-	#quotesource{margin-top:20px}
 
-.btn {margin-bottom:10px}
-
-.social-icons {
-	padding:6px 12px;
-	display:inline-block;
-	
+.card:before {
+	content:'';
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: #BAC1BA;
+	transform-origin: bottom;
+	transform: skewX(-45deg);
 }
-.social-icons .fa {
-	font-size: 1.8em;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
+
+.card:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -5px;
+	width: 5px;
+	height: 100%;
+	background: #92A29C;
+	transform-origin: left;
+	transform: skewY(-45deg);
+}
+
+.card .imgBox {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-origin: left;
+	transition: .7s;
+}
+
+.card .bark {
+	position: absolute;
+	background: #e0e1dc;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: .7s;
+}
+
+.card .imgBox img {
+	min-width: 250px;
+	max-height: 400px;
+}
+
+.card:hover .imgBox {
+	transform: rotateY(-135deg);
+}
+
+.card:hover .bark {
+	opacity: 1;
+	transition: .6s;
+  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+}
+
+.card .details {
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 0 0 0 10px;
+	z-index: -1;
+	margin-top: 70px;
+}
+
+.card .details p {
+	font-size: 15px;
+	line-height: 5px;
+	transform: rotate(-10deg);
+	padding: 0 0 0 20px;
+}
+
+.card .details h4 {
 	text-align: center;
-	color: #FFF;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
 }
-.social-icons.icon-rounded .fa{
-	border-radius:5px;
+
+.text-right {
+	text-align: right;
 }
-.social-icons .fa:hover, .social-icons .fa:active {
-	color: #FFF;
-	-webkit-box-shadow: 1px 1px 3px #333;
-	-moz-box-shadow: 1px 1px 3px #333;
-	box-shadow: 1px 1px 3px #333; 
-}
-.social-icons .fa-twitter {
-	background-color:#490A3D; 
-	border-color:none;} 
-
-.btn-primary {
-	width: 100px;
-	height: 40px;
-	border:none;
-	background:#490A3D;
-	}
-
-@media only screen and (max-width: 768px){  
-    #quotetext {font-size:25px; }
-	.container {	margin-right:20px;}
-    }
-@media only screen and (max-width: 320px){  
-    #quotetext {font-size:18px; }
-
-    }
